@@ -3,6 +3,9 @@ import numpy as np
 import random
 import os
 
+#change to the number of cells in the 4 by 4 grid to be selected to be blackened for each annotation
+num_regions = 3
+
 #function for occluding a section of an image
 def blackout_section(input_image_path, output_image_path, section_coords):
     try:
@@ -29,8 +32,8 @@ def blackout_section(input_image_path, output_image_path, section_coords):
         print(f"An error occurred: {e}")
 
 #replace with actual paths - the image files and .txt label files must have the same file names
-path_to_images = ""
-path_to_image_labels = ""
+path_to_images = r""
+path_to_image_labels = r""
 
 for image_file in os.listdir(rf"{path_to_images}"):
     changed = ""
@@ -44,30 +47,21 @@ for image_file in os.listdir(rf"{path_to_images}"):
     image = Image.open(rf"{path_to_images}\{image_file}")
     #selecting the random sections of the image in a 4 by 4 grid
     locations = [(random.randint(1, 4), random.randint(1, 4))]
-    unique = False
-    while not unique:
+    while True:
         locations.append((random.randint(1, 4), random.randint(1, 4)))
-        if locations[0] != locations[1]:
-            unique = True
-        else:
-            locations.pop()
-    unique = False
-    while not unique:
-        locations.append((random.randint(1, 4), random.randint(1, 4)))
-        if locations[0] != locations[2] and locations[1] != locations[2]:
-            unique = True
-        else:
-            locations.pop()
-
+        locations = list(set(locations))
+        if len(locations) == num_regions:
+            break
     #opens the label file to access annotations
-    with open(rf"{oath_to_image_labels}\{changed}", "r") as file:
+    with open(rf"{path_to_image_labels}\{changed}", "r") as file:
         for line in file:
+            values = line.split()
             values_for_blackout = []
-            for i in range(len(line.split())):
+            for i in range(len(values)):
                 if i == 0:
                     continue
                 else:
-                    values_for_blackout.append(line.split()[i])
+                    values_for_blackout.append(values[i])
             
             #choosing the region which to blackout
             values_for_blackout[0] = int(float(values_for_blackout[0]) * image.size[0])
