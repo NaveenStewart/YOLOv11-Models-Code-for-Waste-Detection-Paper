@@ -6,6 +6,8 @@ As for the scripts, the first is titled "Inference.py" and is able to take a fol
 
 The second script is titled "Occlusion.py" and was used for producing the artificially occluded datasets. The script itself takes both a path to a folder with images and a corresponding path to a folder with the labels for these images. Then, it randomly selects a chosen number of cells in a 4 by 4 grid of each bounding box annotation and turns it black, therefore creating occlusion. There are three values which need to be manually adjusted before it can be applied to a dataset. The first is the number of cells to be occluded per annotation with a value between 1 and 16 (although higher values may not be applicable). The second and third are the file paths to the folders containing images and labels respectively. It is compatible with YOLOv11 bounding box annotations and the file names for the images and their respective labels should match.
 
+Because of their performance, we advise the use of models PBW7 and CW7 in any applications and future training if applicable.
+
 The abstract for the submission which this paper is referencing is shown below (ignoring the link to this repository):
 
 <h2 align="center">
