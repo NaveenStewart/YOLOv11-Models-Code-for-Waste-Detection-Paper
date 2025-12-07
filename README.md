@@ -1,4 +1,4 @@
-# **Models and Certain Code Scripts for TMLR Paper Submission**
+# **Models and Certain Code Scripts for IJAR Paper Submission**
 
 This repository contains all 24 trained YOLOv11 models as well as the two most relevant Python scripts used during experimentation. The models are publicly available for use and further training if desired and maintain the purpose of being used in a variety of environmental settings including litter sorting and detection.
 
