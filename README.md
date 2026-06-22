@@ -17,5 +17,20 @@ The abstract for the submission which this paper is referencing is shown below (
 </h2>
 
 <p align="center">
-  This paper assesses the accuracy and efficiency differences between object detection and instance segmentation models trained on the same dataset, considering how two additional factors contribute to the results: learning rate and use of transfer learning. With two versions of the same dataset, one annotated with bounding boxes and the other with polygons, the effects of using one method of computer vision (CV) over the other were isolated, while keeping other factors constant. This allowed for a clear comparison of the efficiency and accuracy metrics for models under these conditions, thereby highlighting the advantages of each CV technique and quantifying them through the metrics used. For testing, we utilized three levels of visual occlusion, adding a different aspect to the comparison. Additionally, to facilitate the identification of drink container waste products, which benefits from having quick and reliable models to reduce manual effort, we propose a combined model infrastructure for the two object classes studied. This aims to assist in future environmental initiatives that may require this machine learning system. Overall, this system, as well as the results from analyzing the different CV tasks, serve to aid future CV frameworks and provide insights into what differences can be expected when using instance segmentation in place of pure object detection.
+  Automated materials recovery facilities (MRFs) depend on computer vision to reduce manual labor and improve recycling stream purity, yet the
+exact correspondence between detection framework and sorting accuracy remain poorly understood. For object detection and instance segmentation
+computer vision frameworks applied in such facilities, there is not yet adequate understanding of accuracy-efficiency tradeoffs due to a lack of prior
+direct performance comparison. This study addresses that gap by establishing a framework for evaluating how annotation precision between computer
+vision frameworks determines false positive rates in YOLO-based waste detection while applying this framework for 2 waste product tasks. By training
+24 total models split between different frameworks and learning rates across
+2 distinct datasets of 2,600+ images, we introduce a precision ratio r(i, T)
+for analyzing models with identical hyperparameters but differing frameworks. Analysis reveals that the multi-task loss function inherent to instance
+segmentation contributes accuracy gains beyond increased annotation precision; our performance ratio r(i, T) indicates that false positive reduction
+works alongside physical proportions of training data precision, pointing to
+a training regularization effect unique to instance segmentation. Critically
+for conveyor belt environments with frequent overlap, instance segmentation
+maintained significantly higher detection accuracy under artificial occlusion
+of 12.5% and 18.75%, with the performance gap widening as occlusion increases. Further, the 27–33% higher processing time of instance segmentation
+is justified for MRF settings by disproportionate gains in F1 and mAP performance, and the resulting open-source models offer a key resource for direct
+model implementation.
 </p>
