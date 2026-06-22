@@ -17,8 +17,7 @@ The abstract for the submission which this paper is referencing is shown below (
 </h2>
 
 <p align="center">
-  Automated materials recovery facilities (MRFs) depend on computer vision to reduce manual labor and improve recycling stream purity, yet the
-exact correspondence between detection framework and sorting accuracy remain poorly understood. For object detection and instance segmentation
+  Automated materials recovery facilities (MRFs) depend on computer vision to reduce manual labor and improve recycling stream purity, yet the exact correspondence between detection framework and sorting accuracy remain poorly understood. For object detection and instance segmentation
 computer vision frameworks applied in such facilities, there is not yet adequate understanding of accuracy-efficiency tradeoffs due to a lack of prior
 direct performance comparison. This study addresses that gap by establishing a framework for evaluating how annotation precision between computer
 vision frameworks determines false positive rates in YOLO-based waste detection while applying this framework for 2 waste product tasks. By training
